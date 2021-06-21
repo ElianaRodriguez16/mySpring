@@ -9,7 +9,7 @@ public class FordFiesta implements Auto
 {
 	@Injected(implementation=ToyotaMotor.class)
 	private Motor motor;
-		
+
 	@Injected(implementation=BujiaBosh.class, count=5)
 	private List<Bujia> bujias;
 
@@ -32,4 +32,29 @@ public class FordFiesta implements Auto
 		System.out.println("Regulando...");
 	}
 
+
+	public List<Bujia> getBujias() {
+		return bujias;
+	}
+
+
+	public void setBujias(List<Bujia> bujias) {
+		this.bujias = bujias;
+	}
+
+	@Override
+	public void prendeBujia() {
+		for(Bujia bu: getBujias()){
+			bu.bujear();
+		}
+
+	}
+
+	public Motor getMotor() {
+		return motor;
+	}
+
+	public void setMotor(Motor motor) {
+		this.motor = motor;
+	}
 }
