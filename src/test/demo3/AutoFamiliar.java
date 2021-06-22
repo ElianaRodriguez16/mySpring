@@ -3,6 +3,7 @@ package test.demo3;
 import java.util.List;
 
 import myspring.Injected;
+import test.demo2.Motor;
 
 public class AutoFamiliar implements Automovil{
 
@@ -15,6 +16,21 @@ public class AutoFamiliar implements Automovil{
 	@Injected(implementation=LucesParaAuto.class)
 	private Luces luces;
 	
+	public Luces getLuces() {
+		return luces;
+	}
+
+	public void setLuces(Luces luces) {
+		this.luces = luces;
+	}
+	
+	@Override
+	public void probarLuces()
+	{
+		luces.encender();
+		System.out.println("Probando luces");
+	}
+	
 	public List<Vidrio> getVidrios() {
 		return vidrios;
 	}
@@ -24,25 +40,27 @@ public class AutoFamiliar implements Automovil{
 		this.vidrios = vidrios;
 	}
 	
-	@Override
 	public void colocarVidriosPolarizados()
 	{
 		for(Vidrio vi: getVidrios()){
-			vi.polarizar();
+			vi.polarizar(); 
+			System.out.println("Colocando vidrios");
 		}
 	}
 	
-	@Override
-	public void colocarPuertas()
-	{
-		System.out.println("Colocando puerta");
+	public List<Puerta> getPuertas() {
+		return puertas;
 	}
 	
-	@Override
-	public void probarLuces()
+	public void setPuertas(List<Puerta> puertas) {
+		this.puertas = puertas;
+	}
+	
+	
+	public void colocarPuertas()
 	{
-		luces.encender();
-		System.out.println("Probando luces");
+		for(Puerta p: getPuertas()) {
+		System.out.println("Colocando puerta");}
 	}
 	
 	

@@ -7,4 +7,5 @@ public class LucesParaAuto implements Luces{
 	{
 		System.out.println("Luces prendidas");
 	}
+	
 }
