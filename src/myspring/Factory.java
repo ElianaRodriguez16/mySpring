@@ -15,10 +15,10 @@ public class Factory {
 		// sacar hardcode
 
 		//Class instanciaGeneric = null;
-		Class <?>instanciaGeneric = Class.forName(classGeneric.getName());
+		Class <?> instanciaGeneric = Class.forName(classGeneric.getName());
 
 		Object classReturn = null;
-		classReturn = instanciaGeneric.newInstance();
+		classReturn = instanciaGeneric.getDeclaredConstructor().newInstance();
 		//TheBeatles classReturn = new TheBeatles();
 		Class<? extends Object> objetoDeClassConInfoDeMiClase = classReturn.getClass();
 	//	Class<? extends TheBeatles> objetoDeClassConInfoDeMiClase = classReturn.getClass();
@@ -29,7 +29,7 @@ public class Factory {
 
 		//
 		Method metodo = null;
-		Class clase = null;
+		Class <?> clase = null;
 		final Field[] variables = classGeneric.getDeclaredFields();
 		for (final Field variable : variables) {
 
@@ -57,11 +57,11 @@ public class Factory {
 					System.out.println("implementation " + implementation);
 					System.out.println("");
 
-					Class instancia = null;
-					instancia = Class.forName(implementation.getName());
+					//Class instancia = null;
+					Class <?> instancia = Class.forName(implementation.getName());
 
 					Object obj = null;
-					obj = instancia.newInstance();
+					obj = instancia.getDeclaredConstructor().newInstance();
 
 					String primeraLetra = nameVariable.substring(0, 1).toUpperCase();
 					String resto = nameVariable.substring(1);
