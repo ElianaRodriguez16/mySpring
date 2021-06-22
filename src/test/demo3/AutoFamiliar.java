@@ -7,14 +7,14 @@ import test.demo2.Motor;
 
 public class AutoFamiliar implements Automovil{
 
+	@Injected(implementation=LucesParaAuto.class)
+	private Luces luces;
+	
 	@Injected(implementation=VidrioStanley.class, count=4)
 	private List<Vidrio> vidrios;
 	
 	@Injected(implementation=PuertaParaAuto.class, count=5)
 	private List<Puerta> puertas;
-	
-	@Injected(implementation=LucesParaAuto.class)
-	private Luces luces;
 	
 	public Luces getLuces() {
 		return luces;
@@ -27,8 +27,8 @@ public class AutoFamiliar implements Automovil{
 	@Override
 	public void probarLuces()
 	{
-		luces.encender();
 		System.out.println("Probando luces");
+		luces.encender();
 	}
 	
 	public List<Vidrio> getVidrios() {
