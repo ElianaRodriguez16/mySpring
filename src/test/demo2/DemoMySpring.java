@@ -3,7 +3,6 @@ package test.demo2;
 import java.lang.reflect.InvocationTargetException;
 
 import myspring.ComponentScan;
-import myspring.Injected;
 import myspring.Factory;
 
 @ComponentScan("test.demo2")

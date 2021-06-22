@@ -2,7 +2,6 @@ package test.demo2;
 
 import java.util.List;
 
-import myspring.ComponentScan;
 import myspring.Injected;
 
 public class FordFiesta implements Auto
