@@ -14,8 +14,8 @@ public class Factory {
 
 		// sacar hardcode
 
-		Class instanciaGeneric = null;
-		instanciaGeneric = Class.forName(classGeneric.getName());
+		//Class instanciaGeneric = null;
+		Class <?>instanciaGeneric = Class.forName(classGeneric.getName());
 
 		Object classReturn = null;
 		classReturn = instanciaGeneric.newInstance();
