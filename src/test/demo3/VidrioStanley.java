@@ -1,12 +1,7 @@
 package test.demo3;
 
 
-public class VidrioStanley implements Vidrio{
+public class VidrioStanley {
 
-	@Override
-	public void polarizar() {
-		System.out.println("polarizando vidrios");
-
-
-	}
+	
 }
