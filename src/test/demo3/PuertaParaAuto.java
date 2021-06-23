@@ -1,5 +1,5 @@
 package test.demo3;
 
-public class PuertaParaAuto {
+public class PuertaParaAuto implements Puerta{
 
 }

@@ -5,5 +5,6 @@ public interface Automovil {
 	public void colocarVidriosPolarizados();
 	public void colocarPuertas();
 	public void probarLuces();
+	public void colocarBotiquin();
 	
 }

@@ -13,7 +13,8 @@ public class TestAlquilarAuto {
 	      Automovil automovil = (Automovil) Factory.getObject(AutoFamiliar.class);
 	      automovil.probarLuces();
 	      automovil.colocarVidriosPolarizados();
-	      //automovil.colocarPuertas();
+	      automovil.colocarPuertas();
+	      automovil.colocarBotiquin();
 	
 	      }
 }

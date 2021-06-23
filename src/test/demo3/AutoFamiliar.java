@@ -3,7 +3,6 @@ package test.demo3;
 import java.util.List;
 
 import myspring.Injected;
-import test.demo2.Motor;
 
 public class AutoFamiliar implements Automovil{
 
@@ -15,6 +14,9 @@ public class AutoFamiliar implements Automovil{
 	
 	@Injected(implementation=PuertaParaAuto.class, count=5)
 	private List<Puerta> puertas;
+	
+	@Injected(implementation=BotiquinFamiliar.class)
+	private Botiquin botiquin;
 	
 	public Luces getLuces() {
 		return luces;
@@ -63,6 +65,21 @@ public class AutoFamiliar implements Automovil{
 		System.out.println("Colocando puerta");}
 	}
 	
+	
+	public Botiquin getBotiquin() {
+		return botiquin;
+	}
+
+	public void setBotiquin(Botiquin botiquin) {
+		this.botiquin = botiquin;
+	}
+	
+	@Override
+	public void colocarBotiquin()
+	{
+		System.out.println("Agregando botiquin familiar de emergencias");
+		//luces.encender();
+	}
 	
 	
 }
