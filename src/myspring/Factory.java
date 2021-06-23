@@ -51,12 +51,12 @@ public class Factory {
 
 					String nameVariable = variable.getName();
 					clase = variable.getType();
-
+/*
 					System.out.println("nombre atributo :  " + nameVariable);
 					System.out.println("y el nombre de la clase es " + clase);
 					System.out.println("implementation " + implementation);
 					System.out.println("");
-
+*/
 					//Class instancia = null;
 					Class <?> instancia = Class.forName(implementation.getName());
 

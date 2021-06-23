@@ -17,6 +17,6 @@ public class BotiquinFamiliar implements Botiquin{
 	@Override
 	public void agregarAnalgesicos()
 	{
-		System.out.println("Se agrega al botiquin el analgesico Ibuprofeno");
+		analgesico.agregar();
 	}
 }

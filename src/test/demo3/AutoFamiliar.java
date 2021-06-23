@@ -78,7 +78,7 @@ public class AutoFamiliar implements Automovil{
 	public void colocarBotiquin()
 	{
 		System.out.println("Agregando botiquin familiar de emergencias");
-		//luces.encender();
+		botiquin.agregarAnalgesicos();
 	}
 	
 	
