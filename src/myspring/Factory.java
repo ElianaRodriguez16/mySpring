@@ -6,28 +6,24 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Factory {
+public class FactoryTree {
 
 	public static Object getObject(Class<?> classGeneric)
 			throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
 			InvocationTargetException, ClassNotFoundException, InstantiationException {
 
-		// sacar hardcode
-
-		//Class instanciaGeneric = null;
+		
 		Class <?> instanciaGeneric = Class.forName(classGeneric.getName());
 
 		Object classReturn = null;
 		classReturn = instanciaGeneric.getDeclaredConstructor().newInstance();
-		//TheBeatles classReturn = new TheBeatles();
+	
 		Class<? extends Object> objetoDeClassConInfoDeMiClase = classReturn.getClass();
-	//	Class<? extends TheBeatles> objetoDeClassConInfoDeMiClase = classReturn.getClass();
 
 
 
 
-
-		//
+		
 		Method metodo = null;
 		Class <?> clase = null;
 		final Field[] variables = classGeneric.getDeclaredFields();
@@ -35,9 +31,7 @@ public class Factory {
 
 			final Annotation anotacionObtenida = variable.getAnnotation(Injected.class);
 
-			if (anotacionObtenida != null && anotacionObtenida instanceof Injected) {// hay
-																						// mas
-																						// anotation?
+			if (anotacionObtenida != null && anotacionObtenida instanceof Injected) {
 				final Injected anotacionInjected = (Injected) anotacionObtenida;
 
 				int count = anotacionInjected.count();
@@ -51,13 +45,12 @@ public class Factory {
 
 					String nameVariable = variable.getName();
 					clase = variable.getType();
-/*
+
 					System.out.println("nombre atributo :  " + nameVariable);
 					System.out.println("y el nombre de la clase es " + clase);
 					System.out.println("implementation " + implementation);
 					System.out.println("");
-*/
-					//Class instancia = null;
+
 					Class <?> instancia = Class.forName(implementation.getName());
 
 					Object obj = null;
@@ -96,5 +89,10 @@ public class Factory {
 		return classReturn;
 	}
 
-
+	
+	
+	
+	
+	
+	
 }
